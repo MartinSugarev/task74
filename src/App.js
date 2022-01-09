@@ -1,35 +1,33 @@
+import React, { useState, useMemo } from 'react'
 import "./App.css";
-import React, { useState, useMemo, useEffect } from 'react'
 
 function App() {
 
-const [state, SetState] = useState({text: ''});
+const [text, Settext] = useState("");
 //const [isNumber, SetIsNumber] = useState(false)
 
 
 const boo = useMemo(() => {
   let r = /^\d+$/;
   
-  if(state.text.match(r)){
+  if(text.match(r)){
    return true
   }else{
     return false
   }
   
-}, [state.text])
+}, [text])
 
   return (
     <div className="App">
      <div className="control has-icons-right">
         <input
-         value={state.text}
+         value={text}
           className="input is-large"
           type="text"
           placeholder="Enter number..."
           onChange={(e) => {
-            SetState(prevValue => {
-              return {...prevValue, text: e.target.value}
-            })
+            Settext(e.target.value)
           }}
            />
         <span className="icon is-small is-right">
