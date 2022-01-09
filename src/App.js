@@ -3,25 +3,25 @@ import React, { useState, useMemo, useEffect } from 'react'
 
 function App() {
 
-const [number, SetNumber] = useState('');
+const [text, SetText] = useState('');
 //const [isNumber, SetIsNumber] = useState(false)
 
 useEffect(() => {
   console.log(boo);
   
-}, [number])
+}, [text])
 
 
 const boo = useMemo(() => {
   let r = /^\d+$/;
-  let isN = number.match(r);
+  let isN = text.match(r);
   return isN
-}, [number])
+}, [text])
 
 function reg(e){
  //let r = /^\d+$/;
  //if(e.target.value.match(r)){
-   SetNumber(number => e.target.value);
+   SetText(number => e.target.value);
   // SetIsNumber(true);
  //}
  //else{
@@ -40,7 +40,7 @@ function reg(e){
           className="input is-large"
           type="text"
           placeholder="Enter number..."
-          value={number}
+          value={text}
           onChange={(e) => {
             reg(e)
           }}
