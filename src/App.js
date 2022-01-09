@@ -22,7 +22,6 @@ const boo = useMemo(() => {
     <div className="App">
      <div className="control has-icons-right">
         <input
-         value={text}
           className="input is-large"
           type="text"
           placeholder="Enter number..."
