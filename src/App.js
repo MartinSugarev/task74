@@ -3,14 +3,14 @@ import "./App.css";
 
 function App() {
 
-const [text, Settext] = useState("");
+const [text, Settext] = useState({textt: ""});
 //const [isNumber, SetIsNumber] = useState(false)
 
 
 const boo = useMemo(() => {
   let r = /^\d+$/;
   
-  if(text.match(r)){
+  if(text.textt.match(r)){
    return true
   }else{
     return false
@@ -22,12 +22,14 @@ const boo = useMemo(() => {
     <div className="App">
      <div className="control has-icons-right">
         <input
-         value={text}
+         value={text.textt}
           className="input is-large"
           type="text"
           placeholder="Enter number..."
           onChange={(e) => {
-            Settext(e.target.value)
+            Settext(prev => {
+              return {...prev, textt: e.target.value}
+            })
           }}
            />
         <span className="icon is-small is-right">
