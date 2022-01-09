@@ -3,24 +3,19 @@ import React, { useState, useMemo } from 'react'
 
 function App() {
 
-const [text, SetText] = useState('');
-const [isNumber, SetIsNumber] = useState(false)
+const [text, Settext] = useState('');
+//const [isNumber, SetIsNumber] = useState(false)
 
 const boo = useMemo(() => {
   let r = /^\d+$/;
-  let isN = text.match(r);
-  if(isN){
-    SetIsNumber(true)
+  
+  if(text.match(r)){
+   return true
   }else{
-    SetIsNumber(false)
+    return false
   }
-  return isN
+  
 }, [text])
-
-
-
-
-
 
   return (
     <div className="App">
@@ -31,7 +26,7 @@ const boo = useMemo(() => {
           type="text"
           placeholder="Enter number..."
           onChange={(e) => {
-            SetText( text => e.target.value)
+            Settext( text => e.target.value)
           }}
            />
         <span className="icon is-small is-right">
