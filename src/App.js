@@ -1,16 +1,10 @@
 import "./App.css";
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 
 function App() {
 
 const [text, SetText] = useState('');
 //const [isNumber, SetIsNumber] = useState(false)
-
-useEffect(() => {
-  console.log(boo);
-  
-}, [text])
-
 
 const boo = useMemo(() => {
   let r = /^\d+$/;
@@ -21,7 +15,7 @@ const boo = useMemo(() => {
 function reg(e){
  //let r = /^\d+$/;
  //if(e.target.value.match(r)){
-   SetText(number => e.target.value);
+   SetText(e.target.value);
   // SetIsNumber(true);
  //}
  //else{
