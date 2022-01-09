@@ -36,6 +36,7 @@ function reg(e){
     <div className="App">
      <div className="control has-icons-right">
         <input
+         value={text}
           className="input is-large"
           type="text"
           placeholder="Enter number..."
@@ -44,7 +45,7 @@ function reg(e){
           }}
            />
         <span className="icon is-small is-right">
-          <i className={isNumber ? "fas fa-check" :"fas fa-times"} />
+          <i className={boo ? "fas fa-check" :"fas fa-times"} />
         </span> 
       </div>
     </div>
