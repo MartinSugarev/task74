@@ -17,17 +17,7 @@ const boo = useMemo(() => {
   return isN
 }, [text])
 
-function reg(e){
- //let r = /^\d+$/;
- //if(e.target.value.match(r)){
-   SetText(e.target.value);
-  // SetIsNumber(true);
- //}
- //else{
-  //SetNumber(number => e.target.value);
-  //SetIsNumber(false);
- //}
-}
+
 
 
 
@@ -41,7 +31,7 @@ function reg(e){
           type="text"
           placeholder="Enter number..."
           onChange={(e) => {
-            reg(e)
+            SetText(e.target.value)
           }}
            />
         <span className="icon is-small is-right">
