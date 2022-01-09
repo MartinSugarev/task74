@@ -31,7 +31,7 @@ const boo = useMemo(() => {
           type="text"
           placeholder="Enter number..."
           onChange={(e) => {
-            SetText(e.target.value)
+            SetText( text => e.target.value)
           }}
            />
         <span className="icon is-small is-right">
