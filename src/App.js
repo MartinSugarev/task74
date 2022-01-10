@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo  } from 'react'
 import "./App.css";
 
 function App() {
@@ -6,10 +6,10 @@ function App() {
 const [text, Settext] = useState("");
 //const [isNumber, SetIsNumber] = useState(false)
 
-function check(value){
+function check(v){
   let r = /^\d+$/;
   
-  if(value.match(r)){
+  if(v.match(r)){
    return true
   }else{
     return false
@@ -18,9 +18,11 @@ function check(value){
 
 const boo = useMemo(() => {
 
-  check(text)
+ return  check(text)
   
 }, [text])
+
+
 
   return (
     <div className="App">
