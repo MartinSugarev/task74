@@ -6,15 +6,19 @@ function App() {
 const [text, Settext] = useState("");
 //const [isNumber, SetIsNumber] = useState(false)
 
-
-const boo = useMemo(() => {
+function check(value){
   let r = /^\d+$/;
   
-  if(text.match(r)){
+  if(value.match(r)){
    return true
   }else{
     return false
   }
+}
+
+const boo = useMemo(() => {
+
+  check(text)
   
 }, [text])
 
