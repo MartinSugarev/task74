@@ -1,10 +1,10 @@
-import React, { useState, useMemo  } from 'react'
+import React, {useMemo, useState} from 'react'
 import "./App.css";
 
 function App() {
 
 const [text, Settext] = useState(null);
-//const [isNumber, SetIsNumber] = useState(false)
+
 
 function check(v){
   let r = /^\d+$/;
@@ -34,9 +34,7 @@ const boo = useMemo(() => {
           value={text}
           placeholder="Enter number..."
           onChange={(e) => {
-            Settext(text => {
-              return text = e.target.value
-            })
+            Settext(e.target.value)
           }}
            />
         <span className="icon is-small is-right">
